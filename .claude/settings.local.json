@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:docs.ultralytics.com)",
+      "Bash(cd /c/Users/Kaue/Documents/projrob && npm create vite@latest frontend -- --template react-ts 2>&1)",
+      "Bash(cd /c/Users/Kaue/Documents/projrob/frontend && npm install && npm install react-router-dom axios zustand konva react-konva use-image @mantine/core @mantine/hooks @emotion/react @tabler/icons-react 2>&1)",
+      "Bash(head:*)",
+      "Bash(cd /c/Users/Kaue/Documents/projrob/frontend && npm run build 2>&1)",
+      "Bash(python --version 2>&1 && pip --version 2>&1 && node --version 2>&1 && docker --version 2>&1)",
+      "Bash(cd /c/Users/Kaue/Documents/projrob && docker compose up --build -d 2>&1)",
+      "Bash(cd /c/Users/Kaue/Documents/projrob && docker compose up -d 2>&1)",
+      "Bash(curl:*)",
+      "Bash(cd /c/Users/Kaue/Documents/projrob && docker compose up --build -d backend 2>&1)",
+      "Bash(cd /c/Users/Kaue/Documents/projrob && docker compose up --build 2>&1)",
+      "Bash(cd /c/Users/Kaue/Documents/projrob && docker compose exec db psql -U postgres -d projrob -c \"SELECT id, email, username, is_admin FROM users;\" 2>&1)",
+      "Bash(cd /c/Users/Kaue/Documents/projrob && docker compose exec db psql -U postgres -d projrob -c \"SELECT id, name, owner_id FROM projects;\" 2>&1)",
+      "Bash(cd /c/Users/Kaue/Documents/projrob && docker compose exec db psql -U postgres -d projrob -c \"SELECT pm.project_id, pm.user_id, u.username, pm.role FROM project_members pm JOIN users u ON pm.user_id = u.id;\" 2>&1)",
+      "Bash(cd /c/Users/Kaue/Documents/projrob && docker compose exec db psql -U postgres -d projrob -c \"SELECT COUNT\\(*\\) FROM images WHERE project_id = '824b28a9-4347-4585-b35d-6bce77ee78cd';\" 2>&1 && docker compose exec db psql -U postgres -d projrob -c \"SELECT COUNT\\(*\\) FROM image_assignments;\" 2>&1)",
+      "Bash(cd /c/Users/Kaue/Documents/projrob && docker compose exec db psql -U postgres -d projrob -c \"SELECT ia.user_id, u.username, COUNT\\(*\\) FROM image_assignments ia JOIN users u ON ia.user_id = u.id GROUP BY ia.user_id, u.username;\" 2>&1)",
+      "Bash(cd /c/Users/Kaue/Documents/projrob && docker compose exec db psql -U postgres -d projrob -c \"SELECT id, name, color FROM project_classes WHERE project_id = '824b28a9-4347-4585-b35d-6bce77ee78cd';\" 2>&1)",
+      "Bash(cd /c/Users/Kaue/Documents/projrob && docker compose exec db psql -U postgres -d projrob -c \"SELECT storage_path, thumbnail_path FROM images WHERE id = '146e7d99-9b84-45e6-b2e1-de818b354559';\" 2>&1)",
+      "Bash(cd /c/Users/Kaue/Documents/projrob && docker compose exec db psql -U postgres -d projrob -c \"SELECT id, storage_path FROM images LIMIT 3;\" 2>&1)",
+      "Bash(docker compose:*)",
+      "Bash(cd:*)"
+    ]
+  }
+}
